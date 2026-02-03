@@ -1,13 +1,17 @@
+import { useState } from "react";
+import ContenedorTragetas from "./ContenedorTarjetas"
 import Encabezado from "./Encabezado"
-import Expresiones from "./expresiones"
+import PieComponente from "./PieComponente"
+import PromosContenedor from "./PromosContenedor"
 
 function App(){
+  const [vista, setVista] = useState("inicio");
   return (
     <div>
-      <Encabezado />
-      <Expresiones />
-      <h1>5C DSM</h1>
-      <h2>M.T.I. Ricardo Luna Santos</h2>
+      <Encabezado cambiarVista={setVista} />
+      <ContenedorTragetas vista={vista}/>
+      <PromosContenedor/>
+      <PieComponente/>
     </div>
   )
 }
