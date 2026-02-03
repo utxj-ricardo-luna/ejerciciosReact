@@ -1,13 +1,14 @@
+import ContenedorCards from "./ContenedorCards"
 import Encabezado from "./Encabezado"
-import Expresiones from "./expresiones"
-
+import Footer from "./Footer"
+import Promociones from "./Promociones"
 function App(){
   return (
     <div>
       <Encabezado />
-      <Expresiones />
-      <h1>5C DSM</h1>
-      <h2>M.T.I. Ricardo Luna Santos</h2>
+      <ContenedorCards />
+      <Promociones name = ""/>
+      <Footer />
     </div>
   )
 }

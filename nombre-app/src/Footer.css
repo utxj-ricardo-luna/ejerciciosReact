@@ -1,0 +1,16 @@
+.pieDiv{
+    width: 100%;
+    background-color: gray;
+    color: white;
+    display: flex;
+}
+.pieIzquierdoDiv{
+    width: 50%;
+    text-align: left;
+    padding: 8px;
+}
+.pieDerechoDiv {
+    width: 50%;
+    text-align: right;
+    padding: 8px;
+}

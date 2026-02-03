@@ -1,0 +1,14 @@
+
+.promosDiv{
+    background-image: url('./assets/imgFondo.jpg');
+    width: 90%;
+    min-height: 250px;
+    margin: 0 auto;
+    color: white;
+}
+.promosDiv p{
+    margin: 10px;
+}
+.promosDiv h3{
+    margin: 20px;
+}

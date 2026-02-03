@@ -1,0 +1,50 @@
+.encabezadoDiv{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: 160px;
+}
+.logoDiv{
+    width: 20%;
+}
+.logoDiv img{
+    width: 150px;
+}
+.menuDiv{
+    width: 60%;
+}
+.menuDiv ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333; 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 50px;
+}
+.menuDiv ul li a{
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s;
+}
+.menuDiv ul li a:hover{
+    background-color: #10afd6;
+}
+.redesDiv{
+    width: 20%;
+}
+.redesDiv ul{
+
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    margin-top: 50px;
+    
+}
+.redesDiv img{
+    width: 32px;padding-left: 10px;
+}
