@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 function ContenedorTragetas({vista}){
     const vistas={
-        INICIO: <Inicio />,
-        ACERCA: <AcercaDe />,
-        PRODUCTOS: <Productos />,
-        GALERIA: <Galeria />,
-        SUCURSALES: <Sucursales />,
-        CONTACTO: <Contacto />
+        Inicio: <Inicio />,
+        AcercaDe: <AcercaDe />,
+        Productos: <Productos />,
+        Galeria: <Galeria />,
+        Sucursales: <Sucursales />,
+        Contacto: <Contacto />
     }
     return (
         <div className='ContenedorDiv'>
