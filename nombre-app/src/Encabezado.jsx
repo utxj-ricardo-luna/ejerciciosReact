@@ -1,4 +1,4 @@
-import miImagen from './assets/logo.png';
+import miImagen from './assets/logo2.png';
 import facebook from './assets/iconos/facebook.png';
 import instagram from './assets/iconos/instagram.png';
 import x from './assets/iconos/x.png';

@@ -5,12 +5,12 @@ import PieComponente from "./PieComponente"
 import PromosContenedor from "./PromosContenedor"
 
 function App(){
-  const [vista, setVista] = useState("inicio");
+  const [vista, setVista] = useState("Inicio");
   return (
     <div>
       <Encabezado cambiarVista={setVista} />
       <ContenedorTragetas vista={vista}/>
-      <PromosContenedor/>
+      <PromosContenedor />
       <PieComponente/>
     </div>
   )
