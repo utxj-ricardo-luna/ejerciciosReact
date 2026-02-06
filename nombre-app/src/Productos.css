@@ -1,0 +1,48 @@
+.classMain{
+    padding: 40px;
+    font-family: sans-serif;
+}
+.classMain h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.classSection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.classArticle{
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+.classMain img{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.classMain span{
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+}
+.classMain h2{
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+.classMain p{
+    font-weight: bold;
+    color: #0070f3;
+    font-size: 1.1rem;
+}
+.classMain button{
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}

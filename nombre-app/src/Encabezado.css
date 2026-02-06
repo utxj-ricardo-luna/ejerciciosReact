@@ -1,47 +1,18 @@
 .encabezadoDiv{
-<<<<<<< HEAD
     background-color: antiquewhite;
     display: flex;
     justify-content: space-around;
     text-align: center;
     height: 160px;
-=======
     width: 100%;
     height: 200px;
     display: flex;
-    background-color: aliceblue;
->>>>>>> b1942b8cbe996d3b8c4a7e8c3a5acafa66a5be8f
+    background-color: rgb(159, 157, 150);
 }
 .logoDiv{
     width: 20%;
 }
 .logoDiv img{
-<<<<<<< HEAD
-    width: 150px;
-}
-.menuDiv{
-    width: 60%;
-}
-.menuDiv ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: #333; 
-    display: flex; 
-    justify-content: center; 
-    margin-top: 50px;
-}
-.menuDiv ul li a{
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: white;
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s;
-}
-.menuDiv ul li a:hover{
-    background-color: #10afd6;
-=======
     width: 200px;
 }
 .menuDiv{
@@ -53,6 +24,7 @@
     margin: 0 auto;
     padding: 0 auto;
     margin-top: 70px;
+    color: white;
 }
 .menuDiv ul li {
     display: inline-block;
@@ -65,23 +37,11 @@
 }
 .menuDiv ul li:hover{
     background-color: gray;
->>>>>>> b1942b8cbe996d3b8c4a7e8c3a5acafa66a5be8f
 }
 .redesDiv{
     width: 20%;
 }
 .redesDiv ul{
-<<<<<<< HEAD
-
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    margin-top: 50px;
-    
-}
-.redesDiv img{
-    width: 32px;padding-left: 10px;
-=======
     list-style: none;
     color: white;
     margin-top: 70px;
@@ -92,5 +52,4 @@
 }
 .redesDiv img{
     width: 32px;
->>>>>>> b1942b8cbe996d3b8c4a7e8c3a5acafa66a5be8f
 }

@@ -1,0 +1,45 @@
+.classSuc{
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    margin: 0 auto;
+}
+.classSuc h2{
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+.classSedes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+address{
+    font-style: normal;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 5px solid pink;
+}
+.classSedes h3{
+    margin-top: 0;
+    color: #8f58e7;
+        
+}
+.classSedes p{
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+.classSedes a{
+    display: inline-block;
+    margin-top: 10px;
+    color: #8f58e7;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+.classSedes a:hover{
+    color: pink;
+}

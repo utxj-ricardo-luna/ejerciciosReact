@@ -1,15 +1,19 @@
-import imagen from './assets/imagenes/picture.jpg'
+import AcercaDe from './AcercaDe';
 import './ContenedorTarjetas.css'
 import PropTypes from 'prop-types';
+import Productos from './Productor';
+import Galeria from './Galeria';
+import Sucursales from './Sucursales';
+import Contacto from './Contacto';
 
 function ContenedorTragetas({vista}){
     const vistas={
-        INICIO: <Inicio />,
-        ACERCA: <AcercaDe />,
-        PRODUCTOS: <Productos />,
-        GALERIA: <Galeria />,
-        SUCURSALES: <Sucursales />,
-        CONTACTO: <Contacto />
+        Inicio: <Inicio />,
+        AcercaDe: <AcercaDe />,
+        Productos: <Productos />,
+        Galeria: <Galeria />,
+        Sucursales: <Sucursales />,
+        Contacto: <Contacto />
     }
     return (
         <div className='ContenedorDiv'>
@@ -20,39 +24,20 @@ function ContenedorTragetas({vista}){
 function Inicio() {
   return (
     <>
-      <TarjetaComponent />
-      <TarjetaComponent />
-      <TarjetaComponent />
-      <TarjetaComponent />
+      <TarjetaComponent titulo = "Innovación" descripcion = "Proceso de convertir ideas o conocimientos en productos, servicios o procesos nuevos o mejorados que son adoptados por el mercado" image = "https://blog.maestriasydiplomados.tec.mx/hubfs/Blog%20notas%20maestrias%20y%20diplomados/Innovaci%C3%B3n%20tecnol%C3%B3gica.jpg"/>
+      <TarjetaComponent titulo = "Tecnología" descripcion = "Conjunto de conocimientos, habilidades y técnicas aplicadas de forma lógica para resolver problemas, satisfacer necesidades o transformar el entorno" image="https://media.licdn.com/dms/image/sync/v2/D4D27AQEV_sjl2mK6PQ/articleshare-shrink_800/articleshare-shrink_800/0/1718842321749?e=2147483647&v=beta&t=HRuy7ym-Twk1XiOvTX9lAEWd0PlI-sOiP4T0utYwzvw"/>
+      <TarjetaComponent titulo = "Seguridad" descripcion = "Conjunto de medidas y técnicas utilizadas para proteger los datos contra el acceso, uso, divulgación o destrucción no autorizados" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUCJimdqTIA5hgrEvGdkKE32JGqykinAUkjw&s"/>
+      <TarjetaComponent titulo = "Diseño" descripcion = " Acción de modificar o transformar elementos existentes para crear algo nuevo que genere valor." image="https://imgproxy.domestika.org/unsafe/w:1200/rs:fill/plain/src://blog-post-open-graph-covers/000/011/478/11478-original.png?1694080018"/>
     </>
   );
 }
 
-function AcercaDe() {
-  return <h2>Acerca de nosotros</h2>;
-}
-
-function Productos() {
-  return <h2>Productos</h2>;
-}
-
-function Galeria() {
-  return <h2>Galería</h2>;
-}
-
-function Sucursales() {
-  return <h2>Sucursales</h2>;
-}
-
-function Contacto() {
-  return <h2>Contacto</h2>;
-}
-function TarjetaComponent(){
+function TarjetaComponent(props){
     return(
         <div className='TarjetaDiv'>
-            <img src={imagen} alt='Logotipo'/>
-            <h3>Titulo prueba</h3>
-            <p>Hola, esta es una targeta de prueba para utilizar en el componente como información de ejemplo presentada para todos </p>
+            <img src={props.image} alt='Logotipo'/>
+            <h3>{props.titulo}</h3>
+            <p>{props.descripcion}</p>
             <a href='#'>Ver más</a>
         </div>
     )

@@ -1,0 +1,23 @@
+.classGaleria{
+    padding: 20px;
+}
+.classGaleria h2{
+    color: cadetblue;
+}
+figure{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.classImagen{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.classImagen img{
+    width: 333px;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
