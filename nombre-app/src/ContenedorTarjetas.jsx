@@ -5,6 +5,7 @@ import Productos from './Productor';
 import Galeria from './Galeria';
 import Sucursales from './Sucursales';
 import Contacto from './Contacto';
+import Mapa from './Mapa';
 
 function ContenedorTragetas({vista}){
     const vistas={
@@ -37,7 +38,7 @@ function TarjetaComponent(props){
         <div className='TarjetaDiv'>
             <img src={props.image} alt='Logotipo'/>
             <h3>{props.titulo}</h3>
-            <p>{props.descripcion}</p>
+            <p>{props.descripcion}</p> 
             <a href='#'>Ver más</a>
         </div>
     )
