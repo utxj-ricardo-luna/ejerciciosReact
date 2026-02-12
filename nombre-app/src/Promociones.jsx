@@ -1,3 +1,5 @@
+import Mapa from './Mapa'
+import MapaGeolocalizacion from './MapaGeolocalizacion'
 import './Promociones.css'
 function Promociones(props){
     let user  = props
@@ -8,7 +10,10 @@ function Promociones(props){
         <div className="promosDiv">
             <h3>Seccion de promociones</h3>
             <p>En esta seccion se da a conocer la información correspondiete a promociones del sitio, informacion de contratacion, contacto, producto estrella y mucho mas</p>
+        <Mapa/>
+        <MapaGeolocalizacion/>
         </div>
+        
     )
     }
     return (
