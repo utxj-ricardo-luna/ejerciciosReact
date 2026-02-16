@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
+import api from "./Services/api";
 import './Productos.css';
 
 function Productos() {
-    //https://fakestoreapi.com/docs
+    //https://fakestoreapi.com/docs npm install axios
+
     const products = [
         { id: 1, name: "Neural Link Pro", price: "$299", category: "Hardware", img: "https://global.gbm.com/prd/media/wp-content/uploads/Neuralink-1.png" },
         { id: 2, name: "DeepCore API", price: "$49/mes", category: "Software", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV6Of21_z3-hgB2lqKkZRMyBp9MAvbufgM-w&s" },
@@ -12,13 +15,44 @@ function Productos() {
         { id: 7, name: "Bot Assistant X", price: "$30/mes", category: "IA", img: "https://i.ytimg.com/vi/Xbo9ofFXoQc/maxresdefault.jpg" },
         { id: 8, name: "Titan Server Rack", price: "$2,500", category: "Infraestructura", img: "https://media.wavescdn.com/images/products/hardware/share/titan-r-soundgrid-server.jpg" },
     ];
+
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    const obtenerProductos = async () => {
+      try {
+        const response = await api.get("/products");
+        setProductos(response.data);
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    obtenerProductos();
+  }, []);
+
+  if (loading) return <p>Cargando...</p>;
+
     return (
         <div>
             <main className='classMain'>
                 <header>
                     <h1>Nuestro Catálogo Tecnológico</h1>
                 </header>
-
+                <div className="divProducto">
+                <h2>Lista de Usuarios</h2>
+                    {productos.map((producto) => (
+                        <p key={producto.id}>
+                            <p>{producto.title}</p>
+                            <p>{producto.price}</p>
+                            <img src={producto.image}/>
+                            <p>{producto.description}</p>
+                        </p>
+                    ))}
+                </div>
                 <section className='classSection'>
                     {products.map((product) => (
                         <article key={product.id} className='classArticle'>
