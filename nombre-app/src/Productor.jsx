@@ -1,6 +1,7 @@
 import './Productos.css';
 
 function Productos() {
+    //https://fakestoreapi.com/docs
     const products = [
         { id: 1, name: "Neural Link Pro", price: "$299", category: "Hardware", img: "https://global.gbm.com/prd/media/wp-content/uploads/Neuralink-1.png" },
         { id: 2, name: "DeepCore API", price: "$49/mes", category: "Software", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV6Of21_z3-hgB2lqKkZRMyBp9MAvbufgM-w&s" },

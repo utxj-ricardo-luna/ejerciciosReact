@@ -1,3 +1,4 @@
+import Clima from './Clima'
 import MapaGeolocalizacion from './MapaGeolocalizacion'
 import './PromosContenedor.css'
 function PromosContenedor() {
@@ -6,6 +7,7 @@ function PromosContenedor() {
             <h2>Hola bienvenido a nuestro sitio</h2>
             <p>Ofertas en todos los productos</p>
             <MapaGeolocalizacion/>
+            <Clima/>
         </div>
     )
 }
