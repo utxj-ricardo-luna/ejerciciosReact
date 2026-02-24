@@ -1,0 +1,25 @@
+  .tabla-productos {
+    width: 100%;
+    border-collapse: collapse; /* Quita el espacio entre bordes */
+    font-family: Arial, sans-serif;
+  }
+  .tabla-productos th, .tabla-productos td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  .tabla-productos th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  /* Efecto cebra para las filas */
+  .tabla-productos tr:nth-child(even) { background-color: #fafafa; }
+  /* Resaltado al pasar el ratón */
+  .tabla-productos tr:hover { background-color: #f1f1f1; }
+
+  .tabla-productos .btn-eliminar{
+    background-color: red;
+  }
+   .tabla-productos .btn-editar{
+    background-color: rgb(223, 191, 49);
+  }

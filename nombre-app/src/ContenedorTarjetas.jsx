@@ -1,16 +1,17 @@
 import AcercaDe from './AcercaDe';
 import './ContenedorTarjetas.css'
 import PropTypes from 'prop-types';
-import Productos from './Productor';
+import Productos from './Productos';
 import Galeria from './Galeria';
 import Sucursales from './Sucursales';
 import Contacto from './Contacto';
-import Mapa from './Mapa';
+import Usuarios from './Usuarios';
 
 function ContenedorTragetas({vista}){
     const vistas={
         Inicio: <Inicio />,
         AcercaDe: <AcercaDe />,
+        Usuarios: <Usuarios/>,
         Productos: <Productos />,
         Galeria: <Galeria />,
         Sucursales: <Sucursales />,
