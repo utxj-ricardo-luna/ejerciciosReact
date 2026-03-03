@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import api from "./Services/api";
 import './Usuarios.css';
+import RegistrarUsuarios from "./RegistrarUsuarios";
 
 function Usuarios() {
-    //https://fakestoreapi.com/docs npm install axios
-
     const [usuarios, setUsuarios] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
 
-    useEffect(() => {
     const obtenerUsuarios = async () => {
       try {
         const response = await api.get("/users");
@@ -20,13 +19,19 @@ function Usuarios() {
       }
     };
 
-    obtenerUsuarios();
-  }, []);
+    useEffect(() => {
+        obtenerUsuarios();
+    }, []);
 
   if (loading) return <p>Cargando...</p>;
 
     return (
         <div>
+            <RegistrarUsuarios
+              usuarioEditando={usuarioSeleccionado} 
+              limpiarSeleccion={() => setUsuarioSeleccionado(null)}
+              onActualizacionExitosa={obtenerUsuarios}
+            />
             <main className='classMain'>
                 <header>
                     <h1>Usuarios Registrados</h1>
@@ -56,8 +61,8 @@ function Usuarios() {
                                 <td>{usuario.email}</td>
                                 <td>{usuario.username}</td>
                                 <td>{usuario.password}</td>
-                                <td><button className="btn-editar">Editar</button></td>
-                                <td><button className="btn-eliminar">Eliminar</button></td>
+                                <td><button className="btn-editar" onClick={() => setUsuarioSeleccionado(usuario)}>Editar</button></td>
+                                <td><button className="btn-eliminar" onClick={() => removeUsuario(usuario.id)}>Eliminar</button></td>
                             </tr>
                             ))}
                         </tbody>
@@ -67,5 +72,20 @@ function Usuarios() {
         </div>
     )
 }
+const removeUsuario = async (usuarioId) => {
+ if (!window.confirm("¿Estás seguro de eliminar este usuario?")) return;
+  try {
+
+    const response = await api.delete(
+      `/users/${usuarioId}`
+    );
+
+    console.log(response.data);
+    alert('¡Usuario eliminado con éxito!');
+
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 export default Usuarios

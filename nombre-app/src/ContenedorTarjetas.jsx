@@ -6,6 +6,7 @@ import Galeria from './Galeria';
 import Sucursales from './Sucursales';
 import Contacto from './Contacto';
 import Usuarios from './Usuarios';
+import Carritos from './Carrito';
 
 function ContenedorTragetas({vista}){
     const vistas={
@@ -13,6 +14,7 @@ function ContenedorTragetas({vista}){
         AcercaDe: <AcercaDe />,
         Usuarios: <Usuarios/>,
         Productos: <Productos />,
+        Carritos: <Carritos/>,
         Galeria: <Galeria />,
         Sucursales: <Sucursales />,
         Contacto: <Contacto />
