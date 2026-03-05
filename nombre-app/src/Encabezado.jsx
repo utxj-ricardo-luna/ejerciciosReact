@@ -35,17 +35,17 @@ function Menu({cambiarVista}){
                 <li onClick={() => cambiarVista("Inicio")}>Inicio</li>
                 <li onClick={() => cambiarVista("AcercaDe")}>Acerca de</li>
                 <li onClick={() => cambiarVista("Productos")}>Productos</li>
-                <li onClick={() => cambiarVista("Carritos")}>Carrito</li>
                 <li onClick={() => cambiarVista("Galeria")}>Galeria</li>
                 <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
                 <li onClick={() => cambiarVista("Contacto")}>Contacto</li>
                 {isLoggedIn ? (
                 <>
                     <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
-                    <button>Cerrar Sesión</button>
+                    <li onClick={() => cambiarVista("Carritos")}>Carrito</li>
+                    <li >Cerrar Sesión</li>
                 </>
                     ) : (
-                    <li href="/login">Iniciar Sesión</li>
+                    <li onClick={() => cambiarVista("Login")}>Iniciar Sesión</li>
                 )}
             </ul>
         </div>

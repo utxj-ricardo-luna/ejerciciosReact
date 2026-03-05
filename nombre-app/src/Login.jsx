@@ -1,0 +1,65 @@
+import React, { useState } from 'react';
+import api from "./Services/api";
+import './Login.css'
+import { useAuth } from './AuthContext';
+const Login = () => {
+  const { login } = useAuth();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const credenciales = { username, password };
+  try {
+      const respuesta = await api.post('/auth/login', credenciales);
+      const data = respuesta.data;
+      //console.log(respuesta.token)
+    if (data.token) {
+      login(data.token); // Guardamos el token en el contexto
+      // Redirigir al usuario aquí
+      alert('Autenticacion autorizada');
+    } else {
+      alert('Credenciales inválidas');
+
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  } 
+};
+  return (
+    <div className="login-container">
+      <div className="login-card">
+        <h2>Bienvenido</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Correo electrónico</label>
+            <input 
+              type="text" 
+              placeholder="ejemplo@correo.com"
+              value={username} 
+              onChange={(e) => setUsername(e.target.value)} 
+            />
+          </div>
+          <div className="form-group">
+            <label>Contraseña</label>
+            <input 
+              type="password" 
+              placeholder="••••••••"
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+          </div>
+          <button type="submit" className="login-button">
+            Iniciar Sesión
+          </button>
+          <br></br><br></br><hr></hr><br></br>
+          <a href="#" className='crearCuenta'> * Crear nueva cuenta</a>
+          <br></br>
+          <a href="#" className='recuperaCuenta'> * Recuperar contraseña</a>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

@@ -7,6 +7,7 @@ import Sucursales from './Sucursales';
 import Contacto from './Contacto';
 import Usuarios from './Usuarios';
 import Carritos from './Carrito';
+import Login from './Login';
 
 function ContenedorTragetas({vista}){
     const vistas={
@@ -17,7 +18,8 @@ function ContenedorTragetas({vista}){
         Carritos: <Carritos/>,
         Galeria: <Galeria />,
         Sucursales: <Sucursales />,
-        Contacto: <Contacto />
+        Contacto: <Contacto />,
+        Login: <Login/>
     }
     return (
         <div className='ContenedorDiv'>
