@@ -8,8 +8,8 @@ function Productos() {
 
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
+    const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+    
     const obtenerProductos = async () => {
       try {
         const response = await api.get("/products");
@@ -21,14 +21,19 @@ function Productos() {
       }
     };
 
-    obtenerProductos();
-  }, []);
+    useEffect(() => {
+      obtenerProductos();
+    }, []);
 
   if (loading) return <p>Cargando...</p>;
 
     return (
         <div>
-            <RegistrarProductos/>
+            <RegistrarProductos
+              productoEditando={productoSeleccionado} 
+              limpiarSeleccion={() => setProductoSeleccionado(null)}
+              onActualizacionExitosa={obtenerProductos}
+              />
             <main className='classMain'>
                 <header>
                     <h1>Nuestro Catálogo Tecnológico</h1>
@@ -47,9 +52,8 @@ function Productos() {
                             <p>
                                 {producto.price}
                             </p>
-                            <button onClick={createCart}>
-                                Añadir al carrito
-                            </button>
+                            <button onClick={createCart}> Añadir al carrito</button>
+                            <button className="btnEditar" onClick={() => setProductoSeleccionado(producto)}>Editar</button>
                             <button onClick={() => removerProducto(producto.id)} className="btnEliminar">
                                 Eliminar
                             </button>

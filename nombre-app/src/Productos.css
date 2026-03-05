@@ -46,6 +46,15 @@
     cursor: pointer;
     margin-top: 10px;
 }
+.classMain .btnEditar{
+    background-color: rgb(236, 186, 47);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
 .classMain .btnEliminar{
     background-color: rgb(209, 4, 38);
     color: white;

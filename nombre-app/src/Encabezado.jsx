@@ -7,6 +7,7 @@ import linkedin from './assets/iconos/linkedin.png';
 import './Encabezado.css'
 import PropTypes from 'prop-types';
 import Clima from './Clima';
+import { useAuth } from './AuthContext';
 
 function Encabezado({cambiarVista}){
     return (
@@ -27,17 +28,25 @@ function Logotipo(){
 }
 
 function Menu({cambiarVista}){
+    const { isLoggedIn } = useAuth;
     return (
         <div className='menuDiv'>
             <ul>
                 <li onClick={() => cambiarVista("Inicio")}>Inicio</li>
                 <li onClick={() => cambiarVista("AcercaDe")}>Acerca de</li>
-                <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
                 <li onClick={() => cambiarVista("Productos")}>Productos</li>
                 <li onClick={() => cambiarVista("Carritos")}>Carrito</li>
                 <li onClick={() => cambiarVista("Galeria")}>Galeria</li>
                 <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
                 <li onClick={() => cambiarVista("Contacto")}>Contacto</li>
+                {isLoggedIn ? (
+                <>
+                    <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
+                    <button>Cerrar Sesión</button>
+                </>
+                    ) : (
+                    <li href="/login">Iniciar Sesión</li>
+                )}
             </ul>
         </div>
     )
