@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import api from "./Services/api";
 import './Login.css'
 import { useAuth } from './AuthContext';
-const Login = () => {
+
+const Login = ({chVista}) => {
   const { login } = useAuth();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,18 +13,18 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   const credenciales = { username, password };
   try {
-      const respuesta = await api.post('/auth/login', credenciales);
-      const data = respuesta.data;
-      //console.log(respuesta.token)
-    if (data.token) {
-      login(data.token); // Guardamos el token en el contexto
+      const respuesta = await api.post('/auth/login/', credenciales);
+
+    if ( respuesta.data.token) {
+      login( respuesta.data.token); // Guardamos el token en el contexto
       // Redirigir al usuario aquí
       alert('Autenticacion autorizada');
+      chVista("Usuarios"); 
     } else {
       alert('Credenciales inválidas');
-
     }
   } catch (error) {
+    alert('Error', error);
     console.error("Error:", error);
   } 
 };

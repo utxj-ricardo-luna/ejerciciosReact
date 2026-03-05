@@ -26,7 +26,6 @@ function MapaGeolocalizacion() {
           zoom={15}
         >
           <Marker position={ubicacion} />
-          console.info(ubicacion);
         </GoogleMap>
       )}
     </LoadScript>

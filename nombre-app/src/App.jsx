@@ -11,7 +11,7 @@ function App(){
     <div>
       <AuthProvider>
         <Encabezado cambiarVista={setVista} />
-        <ContenedorTragetas vista={vista}/>
+        <ContenedorTragetas vista={vista} chVista={setVista}/>
       </AuthProvider>
       <PromosContenedor />
       <PieComponente/>

@@ -3,7 +3,6 @@ import MapaGeolocalizacion from './MapaGeolocalizacion'
 import './Promociones.css'
 function Promociones(props){
     let user  = props
-    console.info(user)
     if (user.name!="") {
         
      return (

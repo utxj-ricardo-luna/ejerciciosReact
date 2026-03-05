@@ -9,7 +9,7 @@ import Usuarios from './Usuarios';
 import Carritos from './Carrito';
 import Login from './Login';
 
-function ContenedorTragetas({vista}){
+function ContenedorTragetas(props){
     const vistas={
         Inicio: <Inicio />,
         AcercaDe: <AcercaDe />,
@@ -19,11 +19,11 @@ function ContenedorTragetas({vista}){
         Galeria: <Galeria />,
         Sucursales: <Sucursales />,
         Contacto: <Contacto />,
-        Login: <Login/>
+        Login: <Login chVista={props.chVista}/>
     }
     return (
         <div className='ContenedorDiv'>
-            {vistas[vista] || <Inicio />}
+            {vistas[props.vista] || <Inicio />}
         </div>
     )
 }
