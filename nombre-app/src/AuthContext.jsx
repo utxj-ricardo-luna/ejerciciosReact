@@ -1,8 +1,6 @@
 
 import { createContext, useState, useContext } from 'react';
-
 const AuthContext = createContext();
-
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
 
@@ -14,14 +12,12 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('token'); // Limpiamos al salir
     setIsLoggedIn(false);
   };
-
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

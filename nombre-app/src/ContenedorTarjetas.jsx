@@ -8,12 +8,14 @@ import Contacto from './Contacto';
 import Usuarios from './Usuarios';
 import Carritos from './Carrito';
 import Login from './Login';
+import RegistrarUsuarios from './RegistrarUsuarios';
 
 function ContenedorTragetas(props){
     const vistas={
         Inicio: <Inicio />,
         AcercaDe: <AcercaDe />,
         Usuarios: <Usuarios/>,
+        RegistrarUsuarios: <RegistrarUsuarios/>,
         Productos: <Productos />,
         Carritos: <Carritos/>,
         Galeria: <Galeria />,

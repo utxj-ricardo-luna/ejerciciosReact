@@ -14,7 +14,6 @@ const handleSubmit = async (e) => {
   const credenciales = { username, password };
   try {
       const respuesta = await api.post('/auth/login/', credenciales);
-
     if ( respuesta.data.token) {
       login( respuesta.data.token); // Guardamos el token en el contexto
       // Redirigir al usuario aquí
@@ -55,7 +54,7 @@ const handleSubmit = async (e) => {
             Iniciar Sesión
           </button>
           <br></br><br></br><hr></hr><br></br>
-          <a href="#" className='crearCuenta'> * Crear nueva cuenta</a>
+          <a href="#" onClick={() => chVista("RegistrarUsuarios")} className='crearCuenta'> * Crear nueva cuenta</a>
           <br></br>
           <a href="#" className='recuperaCuenta'> * Recuperar contraseña</a>
         </form>
