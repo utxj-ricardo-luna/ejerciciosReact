@@ -10,7 +10,7 @@ function Usuarios() {
 
     const obtenerUsuarios = async () => {
       try {
-        const response = await api.get("/users");
+        const response = await api.get("/api/usuarios");
         setUsuarios(response.data);
       } catch (error) {
         console.error("Error al obtener usuarios:", error);
@@ -41,11 +41,9 @@ function Usuarios() {
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Apellidos</th>
                                 <th>Dirección</th>
                                 <th>Telefono</th>
                                 <th>Correo</th>
-                                <th>Username</th>
                                 <th>Password</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
@@ -54,12 +52,10 @@ function Usuarios() {
                         <tbody>
                             {usuarios.map((usuario) => (
                             <tr key={usuario.id}>
-                                <td>{usuario.name.firstname}</td>
-                                <td>{usuario.name.lastname}</td>
-                                <td>{usuario.address.street} {usuario.address.number} {usuario.address.city} {usuario.address.zipcode}</td>
-                                <td>{usuario.phone}</td>
+                                <td>{usuario.nombre}</td>
+                                <td>{usuario.direccion}</td>
+                                <td>{usuario.telefono}</td>
                                 <td>{usuario.email}</td>
-                                <td>{usuario.username}</td>
                                 <td>{usuario.password}</td>
                                 <td><button className="btn-editar" onClick={() => setUsuarioSeleccionado(usuario)}>Editar</button></td>
                                 <td><button className="btn-eliminar" onClick={() => removeUsuario(usuario.id)}>Eliminar</button></td>

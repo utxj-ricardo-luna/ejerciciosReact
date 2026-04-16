@@ -6,14 +6,14 @@ import { useAuth } from './AuthContext';
 const Login = ({chVista}) => {
   const { login } = useAuth();
 
-  const [username, setUsername] = useState('');
+  const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const credenciales = { username, password };
+  const credenciales = { email, password };
   try {
-      const respuesta = await api.post('/auth/login/', credenciales);
+      const respuesta = await api.post('/api/login/', credenciales);
     if ( respuesta.data.token) {
       login( respuesta.data.token); // Guardamos el token en el contexto
       // Redirigir al usuario aquí
@@ -37,7 +37,7 @@ const handleSubmit = async (e) => {
             <input 
               type="text" 
               placeholder="ejemplo@correo.com"
-              value={username} 
+              value={email} 
               onChange={(e) => setUsername(e.target.value)} 
             />
           </div>

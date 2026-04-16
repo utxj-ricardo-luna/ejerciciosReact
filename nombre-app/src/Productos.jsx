@@ -12,7 +12,7 @@ function Productos() {
     
     const obtenerProductos = async () => {
       try {
-        const response = await api.get("/products");
+        const response = await api.get("/api/productos");
         setProductos(response.data);
       } catch (error) {
         console.error("Error al obtener productos:", error);
@@ -42,15 +42,15 @@ function Productos() {
                     {productos.map((producto) => (
                         <article key={producto.id} className='classArticle'>
                             <img
-                                src={producto.image}
-                                alt={producto.title}
+                                src={producto.nombre}
+                                alt={producto.nombre}
                             />
                             <span>
-                                {producto.description}
+                                {producto.descrpcion}
                             </span>
-                            <h2>{producto.category}</h2>
+                            <h2>{producto.categoria}</h2>
                             <p>
-                                {producto.price}
+                                {producto.precio}
                             </p>
                             <button onClick={createCart}> Añadir al carrito</button>
                             <button className="btnEditar" onClick={() => setProductoSeleccionado(producto)}>Editar</button>
